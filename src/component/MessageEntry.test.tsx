@@ -18,6 +18,7 @@ const setup = () => {
 
 describe('MessageEntry', () => {
   afterEach(cleanup);
+  afterEach(onSubmit.mockClear);
   test('It should accept changes', () => {
     const { input } = setup();
     fireEvent.change(input, { target: { value: 'This is a test' } });
