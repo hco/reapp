@@ -38,4 +38,11 @@ describe('MessageEntry', () => {
     fireEvent.click(button);
     expect(input.value).toBe('');
   });
+
+  test('It should not submit for an empty value', () => {
+    const { input, button } = setup();
+    fireEvent.click(button);
+
+    expect(onSubmit).not.toBeCalled();
+  });
 });

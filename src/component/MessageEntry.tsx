@@ -8,8 +8,10 @@ export const MessageEntry = ({ onSubmit }: Props) => {
   const [message, setMessage] = useState('');
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    onSubmit({ message });
-    setMessage('');
+    if (message !== '') {
+      onSubmit({ message });
+      setMessage('');
+    }
   };
 
   return (
