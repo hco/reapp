@@ -10,7 +10,7 @@ export const MessageList = ({ messages }: Props) => {
   return (
     <ul>
       {messages.map(message => (
-        <MessageListItem key={message.date.toISOString()} message={message} />
+        <MessageListItem key={message.date} message={message} />
       ))}
     </ul>
   );

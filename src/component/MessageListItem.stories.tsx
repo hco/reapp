@@ -6,6 +6,6 @@ import { MessageListItem } from './MessageListItem';
 
 storiesOf('Messages', module).add('<MessageListItem />', () => (
   <MessageListItem
-    message={{ author: 'Elmar', date: new Date(), message: 'Hallo Welt!' }}
+    message={{ author: 'Elmar', date: Date.now(), message: 'Hallo Welt!' }}
   />
 ));

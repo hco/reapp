@@ -9,6 +9,6 @@ export const MessageListItem = ({
   message: { message, author, date }
 }: Props) => (
   <li>
-    {author} wrote on {date.toLocaleString()}:<p>{message}</p>
+    {author} wrote on {new Date(date).toLocaleString()}:<p>{message}</p>
   </li>
 );

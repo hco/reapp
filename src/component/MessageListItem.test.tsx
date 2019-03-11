@@ -5,7 +5,7 @@ import { MessageListItem } from './MessageListItem';
 
 const message: Message = {
   message: 'Hallo Welt',
-  date: new Date('2019-03-05T13:10:49+0100'),
+  date: 1552294754374,
   author: 'Elmarrr'
 };
 

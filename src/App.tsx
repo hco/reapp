@@ -13,7 +13,7 @@ const App = () => {
         onSubmit={({ message }) => {
           setMessages([
             ...messages,
-            { message, author: 'Elmar', date: new Date() }
+            { message, author: 'Elmar', date: Date.now() }
           ]);
         }}
       />
