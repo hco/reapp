@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { addMessage } from '../redux/actions';
 import { MessageEntry } from './MessageEntry';
 
-const mapStateToProps = () => {};
 const mapDispatchToProps = {
   onSubmit: (event: any) => {
     // TODO Das ist halt schon Mist so.
@@ -12,6 +11,6 @@ const mapDispatchToProps = {
 };
 
 export const ReduxMessageEntry = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(MessageEntry);
