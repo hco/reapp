@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "target": "es5",
