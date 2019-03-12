@@ -15,3 +15,19 @@ export interface AddMessageAction {
   type: 'MESSAGE/ADD';
   payload: Message;
 }
+
+export const USERNAME_SET = 'USERNAME/SET';
+
+export interface SetUserNameAction {
+  type: 'USERNAME/SET';
+  payload: {
+    userName: string;
+  };
+}
+
+export const setUsername: (string) => SetUserNameAction = userName => ({
+  type: USERNAME_SET,
+  payload: {
+    userName
+  }
+});
