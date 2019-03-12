@@ -22,7 +22,12 @@ const App = () => {
         onSubmit={({ message }) => {
           setMessages([
             ...messages,
-            { message, author: 'Elmar', date: Date.now() }
+            {
+              message,
+              id: new Date().toISOString(),
+              author: 'Elmar',
+              date: Date.now()
+            }
           ]);
         }}
       />

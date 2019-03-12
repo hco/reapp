@@ -5,11 +5,13 @@ import { MessageList } from './MessageList';
 
 const messages: Message[] = [
   {
+    id: 'C2785718-0721-4759-9F80-787EEDC7463A',
     message: 'Hallo Welt',
     date: 1552294755632,
     author: 'Elmarrr'
   },
   {
+    id: '4C0FDEE1-B6DC-44E3-8C48-0541C3647CC6',
     message: 'Hello World',
     date: 1552294754374,
     author: 'Christian'

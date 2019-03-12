@@ -5,6 +5,7 @@ import { ApplicationState } from './ApplicationState';
 const initialState: ApplicationState = {
   messages: [
     {
+      id: '826B80DD-D954-4BDE-B75A-BB2C75D2B922',
       date: 1552294755632,
       author: 'ElmAR',
       message: 'Hallo Welt'

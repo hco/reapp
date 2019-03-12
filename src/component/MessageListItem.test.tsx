@@ -4,6 +4,7 @@ import { Message } from '../domain/Message';
 import { MessageListItem } from './MessageListItem';
 
 const message: Message = {
+  id: '2263EDA5-718F-4940-A2DF-E51CFD6D38C4',
   message: 'Hallo Welt',
   date: 1552294754374,
   author: 'Elmarrr'
