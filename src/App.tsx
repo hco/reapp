@@ -11,7 +11,6 @@ const store = configureStore();
 const App = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  console.log(store.getState());
   return (
     <Provider store={store}>
       <ReduxMessageList />
