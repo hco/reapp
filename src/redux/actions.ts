@@ -14,7 +14,7 @@ export const addMessage = (messageTexgt: string, author: string) => {
   fetch('https://couch.suora.training/reapp/', {
     credentials: 'include',
     headers: {
-      Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'münchen'),
+      Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'munich'),
       'Content-Type': 'application/json'
     },
     method: 'POST',
@@ -53,7 +53,7 @@ export const fetchMessages = () => async dispatch => {
     {
       credentials: 'include',
       headers: {
-        Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'münchen')
+        Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'munich')
       }
     }
   );
