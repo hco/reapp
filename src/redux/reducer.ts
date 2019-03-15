@@ -4,14 +4,7 @@ import { ApplicationState } from './ApplicationState';
 
 const initialState: ApplicationState = {
   userName: localStorage.getItem('reappUserName') || 'testuser',
-  messages: {
-    '826B80DD-D954-4BDE-B75A-BB2C75D2B922': {
-      id: '826B80DD-D954-4BDE-B75A-BB2C75D2B922',
-      date: 1552294755632,
-      author: 'ElmAR',
-      message: 'Hallo Welt'
-    }
-  }
+  messages: {}
 };
 
 export const appReducer = (state = initialState, action: Action) => {
