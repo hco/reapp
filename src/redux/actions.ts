@@ -1,15 +1,30 @@
 import { Message } from '../domain/Message';
-
+import uuid from 'uuid/v4';
+import base64 from 'base-64';
 export const MESSAGE_ADD = 'MESSAGE/ADD';
 
-export const addMessage = (message: string, author: string) => ({
-  type: MESSAGE_ADD,
-  payload: {
-    message,
+export const addMessage = (messageTexgt: string, author: string) => {
+  let message: Message = {
+    id: uuid(),
+    message: messageTexgt,
     author,
-    date: new Date()
-  }
-});
+    date: Date.now()
+  };
+
+  fetch('https://couch.suora.training/reapp/', {
+    credentials: 'include',
+    headers: {
+      Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'münchen'),
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({ ...message, _id: message.id })
+  });
+  return {
+    type: MESSAGE_ADD,
+    payload: message
+  };
+};
 
 export interface AddMessageAction {
   type: 'MESSAGE/ADD';
@@ -31,3 +46,26 @@ export const setUsername: (string) => SetUserNameAction = userName => ({
     userName
   }
 });
+
+export const fetchMessages = () => async dispatch => {
+  const response = await fetch(
+    'https://couch.suora.training/reapp/_all_docs?include_docs=true&limit=200',
+    {
+      credentials: 'include',
+      headers: {
+        Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'münchen')
+      }
+    }
+  );
+
+  const data = await response.json();
+  data.rows
+    .map(row => row.doc)
+    .forEach(doc =>
+      dispatch({
+        type: MESSAGE_ADD,
+        payload: doc
+      })
+    );
+  console.log(data);
+};
