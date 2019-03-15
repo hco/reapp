@@ -5,6 +5,7 @@ import { Message } from '../domain/Message';
 import { fetchMessages } from '../redux/actions';
 import { ApplicationState } from '../redux/ApplicationState';
 import { MessageList } from './MessageList';
+import useInterval from '@rooks/use-interval';
 
 interface Props {
   messages: Message[];
@@ -15,6 +16,8 @@ const ReduxMessageListComponent = ({ messages, fetchMessages }: Props) => {
   useEffect(() => {
     fetchMessages();
   }, []);
+  useInterval(fetchMessages, 1500, true);
+
   return <MessageList messages={messages.sort((a, b) => a.date - b.date)} />;
 };
 
