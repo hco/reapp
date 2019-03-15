@@ -67,5 +67,4 @@ export const fetchMessages = () => async dispatch => {
         payload: doc
       })
     );
-  console.log(data);
 };
