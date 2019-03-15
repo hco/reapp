@@ -4,17 +4,9 @@ import { appReducer } from './reducer';
 import thunk from 'redux-thunk';
 
 export const configureStore: () => Store<ApplicationState> = () => {
-  const enhancer =
+  const composeEnhancers =
     // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__();
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-  return createStore(
-    appReducer,
-    compose(
-      applyMiddleware(thunk),
-      enhancer
-    )
-  );
+  return createStore(appReducer, composeEnhancers(applyMiddleware(thunk)));
 };
