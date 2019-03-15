@@ -3,10 +3,10 @@ import uuid from 'uuid/v4';
 import base64 from 'base-64';
 export const MESSAGE_ADD = 'MESSAGE/ADD';
 
-export const addMessage = (messageTexgt: string, author: string) => {
+export const addMessage = (messageText: string, author: string) => {
   let message: Message = {
     id: uuid(),
-    message: messageTexgt,
+    message: messageText,
     author,
     date: Date.now()
   };
