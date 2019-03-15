@@ -4,21 +4,21 @@ import { ApplicationState } from './ApplicationState';
 
 const initialState: ApplicationState = {
   userName: localStorage.getItem('reappUserName') || 'testuser',
-  messages: [
-    {
+  messages: {
+    '826B80DD-D954-4BDE-B75A-BB2C75D2B922': {
       id: '826B80DD-D954-4BDE-B75A-BB2C75D2B922',
       date: 1552294755632,
       author: 'ElmAR',
       message: 'Hallo Welt'
     }
-  ]
+  }
 };
 
 export const appReducer = (state = initialState, action: Action) => {
   if (action.type === MESSAGE_ADD) {
     return {
       ...state,
-      messages: [...state.messages, action.payload]
+      messages: { ...state.messages, [action.payload.id]: action.payload }
     };
   }
 

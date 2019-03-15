@@ -19,7 +19,7 @@ const ReduxMessageListComponent = ({ messages, fetchMessages }: Props) => {
 };
 
 const mapStateToProps = (state: ApplicationState) => ({
-  messages: state.messages
+  messages: Object.values(state.messages)
 });
 
 const mapDispatchToProps = {
