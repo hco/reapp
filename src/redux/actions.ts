@@ -16,7 +16,7 @@ export const addMessage = (messageText: string) => (dispatch, getState) => {
   fetch('https://couch.suora.training/reapp/', {
     credentials: 'include',
     headers: {
-      Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'munich'),
+      Authorization: 'Basic ' + base64.encode('jsdays' + ':' + 'munich'),
       'Content-Type': 'application/json'
     },
     method: 'POST',
@@ -55,7 +55,7 @@ export const fetchMessages = () => async dispatch => {
     {
       credentials: 'include',
       headers: {
-        Auth: 'Basic ' + base64.encode('jsdays' + ':' + 'munich')
+        Authorization: 'Basic ' + base64.encode('jsdays' + ':' + 'munich')
       }
     }
   );
