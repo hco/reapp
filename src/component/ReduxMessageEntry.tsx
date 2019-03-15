@@ -6,7 +6,7 @@ const mapDispatchToProps = {
   onSubmit: (event: any) => {
     // TODO Das ist halt schon Mist so.
     // Irgendwas muss hier refactored werden, bin aber noch unschlüssig, was genau.
-    return addMessage(event.message, 'Elmarrr');
+    return addMessage(event.message);
   }
 };
 

@@ -1,13 +1,15 @@
 import { Message } from '../domain/Message';
 import uuid from 'uuid/v4';
 import base64 from 'base-64';
+import { ApplicationState } from './ApplicationState';
 export const MESSAGE_ADD = 'MESSAGE/ADD';
 
-export const addMessage = (messageText: string, author: string) => {
+export const addMessage = (messageText: string) => (dispatch, getState) => {
+  const state: ApplicationState = getState();
   let message: Message = {
     id: uuid(),
     message: messageText,
-    author,
+    author: state.userName,
     date: Date.now()
   };
 
