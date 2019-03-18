@@ -1,3 +1,4 @@
+import { Message } from '../domain/Message';
 import { Action } from './Action';
 import { MESSAGE_ADD, USERNAME_SET } from './actions';
 import { ApplicationState } from './ApplicationState';
@@ -24,3 +25,9 @@ export const appReducer = (state = initialState, action: Action) => {
 
   return state;
 };
+
+export const getUsername: (state: ApplicationState) => string = state =>
+  state.userName;
+
+export const getMessages: (state: ApplicationState) => Message[] = state =>
+  Object.values(state.messages);

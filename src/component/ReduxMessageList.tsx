@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Message } from '../domain/Message';
 import { fetchMessages } from '../redux/actions';
 import { ApplicationState } from '../redux/ApplicationState';
+import { getMessages } from '../redux/reducer';
 import { MessageList } from './MessageList';
 import useInterval from '@rooks/use-interval';
 
@@ -22,7 +23,7 @@ const ReduxMessageListComponent = ({ messages, fetchMessages }: Props) => {
 };
 
 const mapStateToProps = (state: ApplicationState) => ({
-  messages: Object.values(state.messages)
+  messages: getMessages(state)
 });
 
 const mapDispatchToProps = {
